@@ -1,0 +1,43 @@
+.top a {
+    font-size: larger;
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.top a:hover {
+    box-shadow: 0px 0px 5px white;
+}
+
+.banner {
+    background-image: url(src/assets/ZOMOTOBANNER.avif);
+    /* border-image-width: 90%; */
+}
+
+/* Styling for the Orders card */
+.orders-card {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 50px;  /* Position below the "Orders" link */
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.842);
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    width: 300px;
+    border-radius: 15px;
+    
+}
+
+/* Show the card when hovering over the Orders link */
+.nav-item.dropdown:hover .orders-card {
+    display: block;
+    
+}
+.item-image{
+    float: left;
+    margin-right: 10px;
+}
+/* .item-details{
+    float: right;
+} */

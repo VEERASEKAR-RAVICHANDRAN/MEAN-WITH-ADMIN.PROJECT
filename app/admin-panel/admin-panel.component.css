@@ -1,0 +1,101 @@
+/* Overall panel style */
+.admin-panel {
+    display: flex;
+    flex-direction: column; /* Stack header and sidebar vertically */
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full viewport height */
+    background-color: white;
+  }
+  
+  /* Admin Header (Horizontal) */
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f79595;
+    color: white;
+    padding: 10px;
+    width: 100%; /* Ensure header spans full width */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for header */
+  }
+  
+  .admin-header img {
+    width: 150px;
+    height: 60px;
+  }
+  
+  button {
+    background-color: #f79595;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e07c7c;
+  }
+  
+  /* Admin Navigation (Left Sidebar) */
+  .admin-nav {
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick it to the top */
+    height: calc(100vh - 60px); /* Full height minus the header */
+    width: 250px; /* Adjust the width of the sidebar */
+    background-color: #474747;
+    padding-top: 20px;
+    float: left;
+    padding-left: 10px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #ddd;
+  }
+  
+  .admin-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .admin-nav li {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    margin-right:10px ;
+    background-color: #727171;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .admin-nav li:hover {
+    background-color: #ccc;
+  }
+  
+  /* Main content area */
+  .admin-main {
+    flex-grow: 5; /* Main content takes remaining space */
+    padding: 20px;
+    overflow-y: auto;
+    margin-left: 200px; /* Offset the main content to the right of the sidebar */
+  }
+  
+  /* Dashboard stats section */
+  .dashboard-stats {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .dashboard-stats div {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  /* Font style for header */
+  .font {
+    font-family: "Lilita One", serif;
+  }
+  

@@ -1,0 +1,37 @@
+<div class="products">
+    <h2>Available Products</h2>
+    <div class="product-card">
+      <div *ngFor="let product of products" class="product">
+        <img src="assets/food.jpeg" alt="food" height="170px" width="100%" />
+        <h3>{{ product.name }}</h3>
+        <p>Category: {{ product.category }}</p>
+        <p>{{ product.description }}</p>
+        <p>Price: ${{ product.price }}</p>
+  
+        <div class="quantity-controls" *ngIf="getProductQuantity(product._id) > 0">
+          <button (click)="decrementQuantity(product._id)">-</button>
+          <span class="p-2">{{ getProductQuantity(product._id) }}</span>
+          <button (click)="incrementQuantity(product._id)">+</button>
+        </div>
+  
+        <div class="addtocart" *ngIf="getProductQuantity(product._id) === 0">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="addToCart(product, 1)"
+          >
+            Add to Cart
+          </button>
+        </div>
+  
+        <!-- Display "Item added to cart" message -->
+        <span
+          class="added-message text-success"
+          *ngIf="recentlyAdded[product._id]"
+        >
+          Item added to cart!..Go to orders to view your cart
+        </span>
+      </div>
+    </div>
+  </div>
+  

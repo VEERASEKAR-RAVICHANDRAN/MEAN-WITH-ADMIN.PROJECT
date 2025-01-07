@@ -1,0 +1,127 @@
+.orders {
+    margin: 0px 0px 30px 20px;
+  }
+  
+  table {
+    width: 85%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  thead {
+    background-color: #f4f4f4;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    margin:0px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-view {
+    background-color: #00ff3c;
+    color: black;
+  }
+  .btn-view:hover{
+    box-shadow: 0px 0px 5px black;
+    color: white;
+  }
+  
+  .btn-edit {
+    background-color: #007bff;
+    color: black;
+  }
+  .btn-edit:hover{
+    color: white;
+    box-shadow: 0px 0px 5px black;
+  }
+  .btn-delete {
+    background-color: #ff0000;
+    color: black;
+  }
+  .btn-delete:hover{
+    box-shadow: 0px 0px 5px black;
+    color: white;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0);
+  }
+  
+  .popup-content {
+    text-align: left;
+  }
+  
+  .close-btn {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .close-btn i{
+    color: red;
+    border-radius:10px;
+  }
+  .search{
+    /* width: 100%; */
+    padding: 12px 20px;
+    margin: 8px 0;
+
+  }
+  .search .btn{
+    background-color: red;
+    color: black;
+    border-radius: 15px;
+  }
+  .search .btn:hover{
+    color: white;
+    box-shadow: 0px 0px 5px black;
+  }
+  .search input{
+    width: 70%;
+    border-radius: 25px;
+    height: 40px;
+    border-width: 1px;
+    float: left;
+    margin-bottom: 30px;
+  }
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination-controls button {
+    margin: 0 10px;
+    padding: 5px 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    border-color: blue;
+    border-width: 1px;
+  }
+  .pagination-controls i:hover{
+    color: rgb(21, 6, 243);
+  }
+  
+  .pagination-controls button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+ 

@@ -1,0 +1,14 @@
+<!-- edit-banner.component.html -->
+<div class="container">
+    <h3>Edit Banner</h3>
+    <form (ngSubmit)="onSubmit()">
+      <label for="bannerName">Banner Name:</label>
+      <input type="text" id="bannerName" [(ngModel)]="banner.name" name="name" required>
+      
+      <label for="image">Banner Image:</label>
+      <input type="file" id="image" (change)="onFileChange($event)">
+      
+      <button type="submit">Update Banner</button>
+    </form>
+  </div>
+  

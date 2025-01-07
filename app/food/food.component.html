@@ -1,0 +1,79 @@
+<div class="product-container">
+    <h2>Product List</h2>
+  
+    <div class="toolbar">
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Search products..." />
+      <button (click)="toggleAddProductMode()"><i class="bi bi-plus-circle-dotted"></i> Add Product</button>
+    </div>
+  
+    <div *ngIf="addProductMode" class="product-form">
+      <h3>{{ editingProduct ? 'Edit Product' : 'Add New Product' }}</h3>
+      <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+        <input formControlName="name" placeholder="Product Name" />
+        <input formControlName="category" placeholder="Category" />
+        <input formControlName="price" placeholder="Price" />
+        <textarea formControlName="description" placeholder="Description"></textarea>
+        <input formControlName="stock" placeholder="Stock" />
+    
+        <button type="submit" [disabled]="productForm.invalid">{{ editingProduct ? 'Save' : 'Submit' }}</button>
+        <button type="button" (click)="toggleAddProductMode()">Cancel</button>
+      </form>
+    </div>
+  
+    <div *ngIf="isLoading">Loading products...</div>
+  
+    <table *ngIf="!isLoading && (products | filter: searchQuery : 'name').length">
+      <thead>
+        <tr>
+          <th><input type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()" /></th>
+          <!-- <th>SI.NO</th> -->
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products | filter: searchQuery : 'name'" let i = index>
+          <td><input type="checkbox" [(ngModel)]="product.selected" /></td>
+          <!-- Serial number in descending order -->
+          <!-- <td>{{ products.length-i }}</td> -->
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.stock }}</td>
+          <td>
+            <button (click)="viewProduct(product)" class="bg-success"><i class="bi bi-eye "></i></button>
+            <button (click)="editProduct(product)"class=" bg-primary"><i class="bi bi-pencil"></i></button>
+            <button (click)="deleteProduct(product)"class=" bg-primary bg-danger"><i class="bi bi-trash3"></i></button>
+            <!-- View Button -->
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="!isLoading && !(products | filter: searchQuery : 'name').length">
+      No products found.
+    </div>
+  
+    <!-- Modal for Viewing Product -->
+    <div class="modal" *ngIf="viewingProduct">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">×</span>
+        <h2>{{ viewingProduct?.name }}</h2>
+        <div  style="float: right;">
+        <img src="assets/food.jpeg" alt="food" height="100px" width="100px" />
+        </div>
+        <div style="float: left;">
+        <p><strong>Category:</strong> {{ viewingProduct?.category }}</p>
+        <p><strong>Price:</strong> {{ viewingProduct?.price }}</p>
+        <p><strong>Description:</strong> {{ viewingProduct?.description }}</p>
+        <p><strong>Stock:</strong> {{ viewingProduct?.stock }}</p>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  

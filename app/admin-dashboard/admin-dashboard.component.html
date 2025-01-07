@@ -1,0 +1,20 @@
+<div class="admin-dashboard">
+    <div class="admin-header">
+      <img src="assets/admin.webp" alt="logo" width="300px" height="80px">
+      <button (click)="logout()">Logout</button>
+    </div>
+    <div class="fs-auto">
+      <nav class="admin-nav">
+        <ul>
+          <li><button (click)="navigateuser()">User</button></li>
+          <li><button (click)="navigatecategories()">Categories</button></li>
+          <li><button (click)="navigateproduct()">Product</button></li>
+          <li><button (click)="navigateorder()">Order</button></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="fe-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

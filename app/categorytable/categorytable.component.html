@@ -1,0 +1,32 @@
+<div class="total">
+    <h2>Food Timings</h2>
+    <button (click)="addFoodTiming('Morning')">Morning</button>
+    <button (click)="addFoodTiming('Afternoon')">Afternoon</button>
+    <button (click)="addFoodTiming('Evening')">Evening</button>
+    <button (click)="addFoodTiming('Night')">Night</button>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Time</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let timing of foodTimings; let i = index">
+          <td>{{ foodTimings.length-i }}</td>
+          <td>{{ timing.time }}</td>
+          <td>{{ timing.type }}</td>
+          <td>
+            <button (click)="deleteFoodTiming(timing._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p *ngIf="isLoading">Loading...</p>
+    <p *ngIf="!isLoading && foodTimings.length === 0">No food timings found.</p>
+  </div>
+  

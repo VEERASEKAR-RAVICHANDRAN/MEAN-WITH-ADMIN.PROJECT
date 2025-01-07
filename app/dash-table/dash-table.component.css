@@ -1,0 +1,197 @@
+.dashboard {
+    /* margin : 20px auto; */
+    margin: 20px 20px 0px 200px;
+    max-width: 90%;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .dashboard .search input{
+    border-radius: 25px;
+    width: 60%;
+    height: 50px;
+  }
+  .form-user input{
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+}
+  .dashboard h2 {
+    font-size: 27px;
+    font-weight: bold;
+    /* font-family: "Lilita One", serif; */
+    margin-bottom: 20px;
+    color: #333;
+  }
+  td button{
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin: 0px 5px;
+    border-color: transparent;
+    transition: background-color 0.3s ease;
+
+  }
+  td button:hover{
+    /* background-color: cornflowerblue; */
+    box-shadow: 0px 0px 10px black;
+    /* background-color: red; */
+  }
+  /* td .delete button:hover{
+    box-shadow: 0px 0px 10px black;
+    background-color: red;
+  } */
+  .dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .dashboard button{
+    border-radius: 10px;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  .dashboard button:hover{
+    box-shadow: 0px 0px 10px black;
+    /* color: white; */
+    /* background-color: #1e89fc; */
+    /* border-color: #1e89fc; */
+
+  }
+  /* .action:hover{
+    color: white;
+  } */
+  .delete:hover{
+    background-color: red;
+    /* border-color: red; */
+    color: white;
+  }
+  .edit:hover{
+    color: white;
+  }
+  .dashboard table thead {
+    background-color: #f5f5f5;
+    text-align: left;
+  }
+  th{
+    font-weight: bold;
+  }
+  .dashboard table th, 
+  .dashboard table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+
+  }
+  
+  .dashboard table th {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* .dashboard table tbody tr:nth-child(even) {
+    background-color: #c3f5f7;
+  } */
+  
+  .dashboard table tbody tr:hover {
+    background-color: #e9e7e7;
+  }
+  
+  .dashboard .loading {
+    font-size: 18px;
+    color: #888;
+    margin-top: 10px;
+  }
+  /* .search input{
+    border-radius: 10px;
+    border-color: transparent;
+    box-shadow: 0px 0px 3px black;
+    height: 30px;
+  } */
+   .head input{
+    border-radius: 25px;
+    border-color: black;
+    border-width: 1px;
+    /* box-shadow: 0px 0px 3px black; */
+    height: 45px;
+    width: 80%;
+   }
+   .head button{
+    /* background-color: rgba(255, 0, 0, 0.884); */
+    color: red;
+    border-radius: 15px;
+    padding: 5px;
+   }
+  .head button:hover{
+    box-shadow: 0px 0px 5px red ;
+    background-color: transparent;
+  }
+  .head h2{
+    margin-left: 0px;
+  }
+  .dashboard {
+    padding: 20px;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0);
+  }
+  
+  .popup-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  .popup-content p {
+    margin: 5px 0;
+  }
+  
+  .popup-content .btn {
+    margin-top: 10px;
+  }
+  .btn:hover{
+    box-shadow: 0px 0px 0px black;
+  }
+  .user-details-table{
+    border-color: transparent;
+  }
+  .close-btn{
+    /* width: 40px; */
+    /* height: 40px; */
+    margin-left: 300px;
+    color: red;
+    font-size: x-large;
+  }
+  table{
+    border-color: transparent;
+  }
+  /* .close-btn:hover{
+    box-shadow: 0px 0px 5px red;
+
+  } */
+   .form-user input{
+        float: left;
+        margin: 10px 25px;
+   }
+   /* .form-user button */
+  
+  @media (max-width: 768px) {
+    .dashboard table {
+      font-size: 14px;
+    }
+  
+    .dashboard table th, 
+    .dashboard table td {
+      padding: 8px;
+    }
+  }
+  

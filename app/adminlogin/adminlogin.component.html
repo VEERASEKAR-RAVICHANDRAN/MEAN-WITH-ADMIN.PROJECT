@@ -1,0 +1,33 @@
+<div class="admin-login-container bg-light my-5">
+    <h2>Admin Login</h2>
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="username">Admin Username</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          [(ngModel)]="adminCredentials.username"
+          name="username"
+          placeholder="Enter admin username"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          [(ngModel)]="adminCredentials.password"
+          name="password"
+          placeholder="Enter admin password"
+          required
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+  

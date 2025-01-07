@@ -1,0 +1,148 @@
+/* Overall panel style */
+.admin-panel {
+    display: flex;
+    flex-direction: column; /* Stack header and sidebar vertically */
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full viewport height */
+    background-color: white;
+  }
+  
+  /* Admin Header (Horizontal) */
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #f8e9e9; */
+    color: rgb(2, 2, 2);
+    padding: 10px;
+    width: 100%; /* Ensure header spans full width */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for header */
+  }
+  
+  .admin-header img {
+    width: 150px;
+    height: 60px;
+  }
+  .admin-dashboard{
+    background-color: white;
+  }
+  
+  button {
+    background-color: #f73c3c;
+    border: none;
+    border-radius: 35px;
+    border-color: transparent;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  ul li button{
+    background-color: transparent;
+    width: 100%;
+    color: black;
+  }
+  ul li button:hover{
+    box-shadow: 0px 0px 10px black;
+  }
+  button:hover {
+    /* background-color: #e07c7c; */
+    box-shadow: 0px 0px 7px black;
+  }
+  
+  /* Admin Navigation (Left Sidebar) */
+  .admin-nav {
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick it to the top */
+    height: calc(100vh - 60px); /* Full height minus the header */
+    width: 200px; /* Adjust the width of the sidebar */
+    background-color: #ece8e8;
+    padding-top: 20px;
+    float: left;
+    padding-left: 0px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #ddd;
+  }
+  
+  .admin-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .admin-nav li {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  a{
+    text-decoration: none;
+  }
+  
+  .admin-nav li:hover {
+    background-color: #ccc;
+  }
+  
+  /* Main content area */
+  .admin-main {
+    flex-grow: 5; /* Main content takes remaining space */
+    padding: 20px;
+    overflow-y: auto;
+    margin-left: 200px; /* Offset the main content to the right of the sidebar */
+  }
+  
+  /* Dashboard stats section */
+  .dashboard-stats {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .dashboard-stats div {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  /* Font style for header */
+  .font {
+    font-family: "Lilita One", serif;
+  }
+  .dashboard {
+    padding: 20px;
+  
+    .dashboard-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+  
+      div {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+      }
+    }
+  
+    .world-map {
+      margin: 20px 0;
+      text-align: center;
+  
+      img {
+        max-width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+    }
+  
+    .sales-analytics {
+      text-align: center;
+    }
+  }
+  

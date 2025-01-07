@@ -1,0 +1,92 @@
+<div class="dashboard">
+    <div class="head">
+      <h2 class="ms-1">Users</h2>
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Search users..." class="search my-4" />
+      <button (click)="deleteSelectedUsers()" class="ms-5">
+        <i class="bi bi-trash3"></i> Selected
+      </button>
+    </div>
+  
+    <div *ngIf="isLoading">Loading...</div>
+  
+    <form *ngIf="editMode" [formGroup]="userForm" (ngSubmit)="currentUser ? updateUser() : addUser()" class="form-user">
+      <input formControlName="username" placeholder="Username" />
+      <input formControlName="email" placeholder="Email" />
+      <input formControlName="firstName" placeholder="First Name" />
+      <input formControlName="lastName" placeholder="Last Name" />
+      <input formControlName="phoneNumber" placeholder="Phone Number" />
+      <button type="submit">{{ currentUser ? 'Update User' : 'Add User' }}</button>
+      <button type="button" (click)="cancelEdit()">Cancel</button>
+    </form>
+  
+    <table *ngIf="!isLoading">
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()" />
+          </th>
+          <th>Si. No.</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | filter: searchQuery : 'username'; let i = index">
+          <td>
+            <input type="checkbox" [(ngModel)]="user.selected" />
+          </td>
+          <td>{{ users.length - i }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.phoneNumber }}</td>
+          <td class="action">
+            <button (click)="viewUser(user)" class="bg-success view"><i class="bi bi-eye"></i></button>
+            <button (click)="editUser(user)" class="bg-primary edit"><i class="bi bi-pencil"></i></button>
+            <button (click)="deleteUser(user._id)" class="bg-danger delete"><i class="bi bi-trash3"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- User Details Popup -->
+    <div class="popup" *ngIf="showPopup">
+        <div class="popup-content">
+            <div>
+                <button (click)="closePopup()" class="close-btn"><i class="bi bi-x-square"></i></button>
+            </div>
+          
+          <h3>User Details</h3>
+          <table class="user-details-table">
+            <tr>
+              <td><strong>Username:</strong></td>
+              <td>{{ selectedUser?.username }}</td>
+            </tr>
+            <tr>
+              <td><strong>Email:</strong></td>
+              <td>{{ selectedUser?.email }}</td>
+            </tr>
+            <tr>
+              <td><strong>First Name:</strong></td>
+              <td>{{ selectedUser?.firstName }}</td>
+            </tr>
+            <tr>
+              <td><strong>Last Name:</strong></td>
+              <td>{{ selectedUser?.lastName }}</td>
+            </tr>
+            <tr>
+              <td><strong>Phone Number:</strong></td>
+              <td>{{ selectedUser?.phoneNumber }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      
+      
+  </div>
+  

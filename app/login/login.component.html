@@ -1,0 +1,49 @@
+<!-- login.component.html -->
+<div class="login-container">
+    <h2>Login</h2>
+  
+    <!-- Show the login form if the user is not logged in -->
+    <div *ngIf="!isLoggedIn">
+      <form (ngSubmit)="login()">
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          id="email"
+          [(ngModel)]="credentials.email"
+          name="email"
+          required
+          #email="ngModel"
+        />
+        <br />
+  
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="credentials.password"
+          name="password"
+          required
+          password="ngModel"
+        />
+        <br />
+  
+        <button type="submit" [disabled]="!email.valid ">Login</button>
+      </form>
+      <!-- <p *ngIf="loginError" class="error">{{ loginError }}</p> -->
+
+      <p>
+        Don't have an account? <a routerLink="/register">Register here</a>.
+      </p>
+    </div>
+  
+    <!-- Show the logout button if the user is logged in -->
+    <div *ngIf="isLoggedIn">
+      <p>You are already logged in!</p>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+  
+  <p class="fs-5 fw-bold color-light">
+    The food and the restaurant of your choice
+  </p>
+  

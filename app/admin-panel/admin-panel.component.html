@@ -1,0 +1,23 @@
+<div class="admin-panel">
+    <!-- Admin Header -->
+    <div class="admin-header">
+      <img src="assets/Zomato-Logo.png" alt="logo" width="150px" height="60px">
+      <button (click)="logout()">Logout</button>
+    </div>
+  
+    <!-- Admin Navigation (Sticky Left Sidebar) -->
+    <div class="admin-nav">
+      <ul>
+        <li (click)="selectSection('dashboard')">Dashboard</li>
+        <li (click)="selectSection('products')">Manage Products</li>
+        <li (click)="selectSection('orders')">Manage Orders</li>
+        <li (click)="selectSection('users')">Manage Users</li>
+      </ul>
+    </div>
+  
+    <!-- Main Content Section -->
+    <div class="admin-main">
+      <app-dashboard></app-dashboard>
+    </div>
+  </div>
+  

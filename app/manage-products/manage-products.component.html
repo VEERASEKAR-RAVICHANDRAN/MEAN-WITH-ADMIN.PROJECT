@@ -1,0 +1,50 @@
+<div class="manage-products">
+    <h2>Manage Products</h2>
+    <button class="btn btn-primary" (click)="showAddProductForm = true">Add Product</button>
+  
+    <div *ngIf="showAddProductForm">
+      <h3>Add Product</h3>
+      <form (ngSubmit)="addProduct()">
+        <div>
+          <label>Name:</label>
+          <input type="text" [(ngModel)]="productData.name" name="name" required />
+        </div>
+        <div>
+          <label>Category:</label>
+          <input type="text" [(ngModel)]="productData.category" name="category" required />
+        </div>
+        <div>
+          <label>Price:</label>
+          <input type="number" [(ngModel)]="productData.price" name="price" required />
+        </div>
+        <div>
+          <label>Description:</label>
+          <textarea [(ngModel)]="productData.description" name="description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="showAddProductForm = false">Cancel</button>
+      </form>
+    </div>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>${{ product.price }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="editProduct(product)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteProduct(product._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

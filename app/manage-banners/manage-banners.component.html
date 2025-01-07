@@ -1,0 +1,23 @@
+<div class="manage-banners">
+    <h2>Manage Banners</h2>
+    <form (ngSubmit)="addBanner()" enctype="multipart/form-data">
+      <div>
+        <label>Banner Name:</label>
+        <input type="text" [(ngModel)]="bannerData.name" name="name" required />
+      </div>
+      <div>
+        <label>Banner Image:</label>
+        <input type="file" (change)="onFileSelect($event)" />
+      </div>
+      <button type="submit" class="btn btn-primary">Add Banner</button>
+    </form>
+    <div *ngIf="banners.length > 0">
+      <h3>Existing Banners</h3>
+      <ul>
+        <li *ngFor="let banner of banners">
+          {{ banner.name }}
+          <img [src]="'http://localhost:3000/' + banner.bannerImage" alt="Banner" />
+        </li>
+      </ul>
+    </div>
+  </div>

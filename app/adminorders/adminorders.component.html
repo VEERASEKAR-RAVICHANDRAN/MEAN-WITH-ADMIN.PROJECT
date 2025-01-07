@@ -1,0 +1,73 @@
+<div class="orders">
+    <h2>Order List</h2>
+    <div class="search">
+        <input
+          type="text"
+          [(ngModel)]="searchQuery"
+          placeholder="Search orders..."
+          (keyup)="filterOrders()" />
+        <button (click)="deleteSelectedOrders()" class="btn">
+          <i class="bi bi-trash3"></i> Selected
+        </button>
+      </div>
+      
+    
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()" />
+          </th>
+          <th>Order No.</th>
+          <th>Total Amount</th>
+          <th>Status</th>
+          <th>Payment Method</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of filteredOrders; let i = index">
+          <td>
+            <input type="checkbox" [(ngModel)]="order.selected" />
+          </td>
+          <td>O-{{ filteredOrders.length-i }}</td>
+          <td>{{ order.totalAmount | currency }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.paymentMethod }}</td>
+          <td>
+            <button (click)="viewOrder(order, i)" class="btn btn-view"><i class="bi bi-eye"></i></button>
+            <button (click)="editOrder(order)" class="btn btn-edit"><i class="bi bi-pencil"></i></button>
+            <button (click)="deleteOrder(order._id)" class="btn btn-delete"><i class="bi bi-trash3"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination-controls">
+        <button (click)="previousPage()" [disabled]="currentPage === 1"><i class="bi bi-arrow-left-circle-fill"></i></button>
+        <span>{{ currentPage }} of {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages"><i class="bi bi-arrow-right-circle-fill"></i></button>
+    </div>
+      
+  
+    <!-- Popup for Viewing Order Details -->
+    <div class="popup" *ngIf="showPopup">
+      <div class="popup-content">
+        <button (click)="closePopup()" class="close-btn"><i class="bi bi-x-square"></i></button>
+        <h3>Order Details</h3>
+        <p><strong>Order No.:</strong> O-{{ selectedOrderIndex + 1 }}</p>
+        <p><strong>Total Amount:</strong> {{ selectedOrder?.totalAmount | currency }}</p>
+        <p><strong>Status:</strong> {{ selectedOrder?.status }}</p>
+        <p><strong>Payment Method:</strong> {{ selectedOrder?.paymentMethod }}</p>
+        <p><strong>Payment Status:</strong> {{ selectedOrder?.paymentStatus }}</p>
+        <h4>Shipping Address:</h4>
+        <p>{{ selectedOrder?.shippingAddress.street }}, {{ selectedOrder?.shippingAddress.city }}, {{ selectedOrder?.shippingAddress.state }}, {{ selectedOrder?.shippingAddress.postalCode }}, {{ selectedOrder?.shippingAddress.country }}</p>
+        <h4>Products:</h4>
+        <ul>
+          <li *ngFor="let product of selectedOrder?.products">
+            Product ID: {{ product.productId }}, Quantity: {{ product.quantity }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

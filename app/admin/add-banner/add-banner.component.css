@@ -1,0 +1,16 @@
+input{
+    border-radius: 15px;
+    width: 50%;
+}
+textarea{
+    width: 50%;
+    border-radius: 15px;
+}
+button{
+    border-radius: 15px;
+    background-color: rgb(3, 158, 3);
+    border-color: transparent;
+}
+form{
+    margin: 50px 200px;
+}

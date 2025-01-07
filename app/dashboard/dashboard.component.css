@@ -1,0 +1,48 @@
+.dashboard {
+    padding: 20px;
+  
+    .dashboard-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+  
+      div {
+        background-color: #ff00007a;
+        color: rgb(253, 253, 253);
+        padding: 20px;
+        border-radius: 2px;
+        text-align: center;
+      }
+    }
+  .dashboard-stats p{
+    font-family: "Lilita One", serif;
+    font-weight: normal;
+    color: blue;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    /* -webkit-text-fill-color: red; */
+  }
+  .dashboard-stats h1{
+    float: left;
+  }
+  .dashboard-stats h3{
+    font-family: "Lilita One", serif;
+
+  }
+    .world-map {
+      margin: 20px 0;
+      text-align: center;
+      float: left;
+      img {
+        max-width: 90%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+    }
+  
+    .sales-analytics {
+      text-align: center;
+    }
+  }
+  

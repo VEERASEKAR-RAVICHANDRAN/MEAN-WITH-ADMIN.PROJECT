@@ -1,0 +1,32 @@
+<div class="container">
+    <h3>Add New Banner</h3>
+    <form (ngSubmit)="onSubmit()" class="justify-content-center">
+      <div class="my-3">
+        <label for="bannerName">Banner Name:</label> <br>
+        <input
+          type="text"
+          id="bannerName"
+          [(ngModel)]="banner.name"
+          name="name"
+          required
+        />
+      </div>
+  
+      <div class="my-3">
+        <label for="bannerDescription">Description:</label> <br>
+        <textarea
+          id="bannerDescription"
+          [(ngModel)]="banner.description"
+          name="description"
+        ></textarea>
+      </div>
+  
+      <div class="my-3">
+        <label for="image">Banner Image:</label> <br>
+        <input type="file" id="image" (change)="onFileChange($event)" required />
+      </div>
+  
+      <button type="submit" class="my-3">Add Banner</button>
+    </form>
+  </div>
+  
